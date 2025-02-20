@@ -5,7 +5,7 @@
 // 4. Finds users with duplicate emails.
 
 // Use Mongoose library
-
+import mongoose from 'mongoose';
 type DuplicatedUsers = {
     email: string
 }

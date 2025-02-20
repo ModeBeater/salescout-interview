@@ -12,7 +12,11 @@ app.use(express.json());
 const users: { name: string }[] = [];
 
 app.post('/user', (req: Request, res: Response) => {
-    res.status(200).send();
+    const name = req.body.name;
+    if(name){
+        users.push({name});
+        res.status(201).json({message: 'User added', user: {name}})
+    }
 });
 
 app.get('/users', (req: Request, res: Response) => {
